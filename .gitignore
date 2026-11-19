@@ -1,0 +1,4 @@
+gmail-extension/
+dist/
+*.zip
+.DS_Store
