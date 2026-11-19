@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "CLAG - Clear Labels & Archive for Gmail",
   "short_name": "CLAG",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "One click removes every label from the open thread and archives it. Works in Gmail, Jace and Superhuman. No data collected.",
   "homepage_url": "https://github.com/vbarbio/clag",
   "icons": {
@@ -11,20 +11,56 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
+  "action": {
+    "default_title": "CLAG settings",
+    "default_popup": "options.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "clear-labels": {
+      "suggested_key": {
+        "default": "Alt+Shift+L",
+        "mac": "Alt+Shift+L"
+      },
+      "description": "Clear all labels and archive the open thread"
+    }
+  },
   "content_scripts": [
     {
-      "matches": ["https://mail.google.com/*"],
-      "js": ["content.js"],
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_idle"
     },
     {
-      "matches": ["https://app.jace.ai/*"],
-      "js": ["content-jace.js"],
+      "matches": [
+        "https://app.jace.ai/*"
+      ],
+      "js": [
+        "content-jace.js"
+      ],
       "run_at": "document_idle"
     },
     {
-      "matches": ["https://mail.superhuman.com/*"],
-      "js": ["content-superhuman.js"],
+      "matches": [
+        "https://mail.superhuman.com/*"
+      ],
+      "js": [
+        "content-superhuman.js"
+      ],
       "run_at": "document_idle"
     }
   ]

@@ -90,7 +90,7 @@ function setStyle(btn, state, label) {
         'user-select:none', 'height:24px', 'box-sizing:border-box',
       ].join(';');
       btn.textContent = 'CLA Now';
-      btn.title = 'Clear all labels';
+      btn.title = 'Clear all labels (Alt/⌥+Shift+L)';
       break;
     case 'busy':
       btn.style.opacity = '0.5';
@@ -148,3 +148,12 @@ new MutationObserver(() => {
 }).observe(document.body, { childList: true, subtree: true });
 
 setTimeout(injectBtn, 1200);
+
+// ── Atajo de teclado (llega desde background.js) ────────────────────────────
+
+chrome.runtime.onMessage.addListener(msg => {
+  if (!msg || msg.type !== 'clag-run' || clearInProgress) return;
+  if (!document.getElementById(BTN_ID)) injectBtn();
+  const btn = document.getElementById(BTN_ID);
+  if (btn) clearAllLabels(btn);
+});

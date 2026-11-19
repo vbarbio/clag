@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CLAG settings</title>
+  <style>
+    body { font: 13px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #202124; margin: 0; padding: 16px; width: 280px; }
+    h1 { font-size: 15px; margin: 0 0 4px; display: flex; align-items: center; gap: 8px; }
+    h1 img { width: 20px; height: 20px; }
+    p { margin: 6px 0; color: #5f6368; }
+    .shortcut { margin: 12px 0; padding: 10px; border: 1px solid #dadce0; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }
+    kbd { font: 600 13px ui-monospace, SFMono-Regular, Menlo, monospace; background: #f1f3f4; border-radius: 4px; padding: 2px 6px; }
+    .unset { color: #c5221f; font-weight: 600; }
+    button { width: 100%; padding: 8px; border: 0; border-radius: 6px; background: #c5221f; color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+    button:hover { background: #a50e0e; }
+    .hint { font-size: 12px; margin-top: 10px; }
+    a { color: #1a73e8; }
+  </style>
+</head>
+<body>
+  <h1><img src="icons/icon32.png" alt="">CLAG</h1>
+  <p>Clear Labels &amp; Archive for Gmail</p>
+
+  <div class="shortcut">
+    <span>Keyboard shortcut</span>
+    <span id="current"><kbd>…</kbd></span>
+  </div>
+
+  <button id="change">Change shortcut</button>
+
+  <p class="hint">Opens your browser's shortcut settings. Find <b>CLAG</b> and click the pencil icon to set a new combination.</p>
+  <p class="hint"><a href="https://github.com/vbarbio/clag" target="_blank" rel="noopener">GitHub</a> · v<span id="version"></span></p>
+
+  <script src="options.js"></script>
+</body>
+</html>

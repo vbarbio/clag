@@ -20,10 +20,12 @@ Works in **Gmail**, **Jace** and **Superhuman** (on Superhuman it clears labels 
 ## How it works in Gmail
 
 1. Open a thread that has labels. The **CLA Now** button appears in the thread toolbar.
-2. Click it. CLAG removes each label, unstars the thread and archives it.
+2. Click it, or press **Alt+Shift+L** (Option+Shift+L on Mac). CLAG removes each label, unstars the thread and archives it.
 3. Archiving uses Gmail's `e` shortcut once. If that does not close the thread
    (for example, keyboard shortcuts are off in Gmail settings), CLAG clicks Gmail's own Archive button instead.
    It never presses `e` twice, so it cannot archive the next thread by mistake.
+
+To change the shortcut, click the CLAG icon in the toolbar and press **Change shortcut** (or go to `chrome://extensions/shortcuts`).
 
 Tip: turn on keyboard shortcuts in Gmail (Settings > General > Keyboard shortcuts) for the most reliable result.
 
